@@ -1,40 +1,21 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Task7 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Введите количество элементов в массиве: ");
+        var sc = new Scanner(System.in);
+        System.out.println("Введите количество элементов массива");
         var n = sc.nextInt();
-        var numbers = getNumbers(n, sc); // создать метод
-        // Показать массив перед сортировкой
-        System.out.println("Массив перед сортировкой: ");
-        showArray(numbers);
-        //сортировать и отображать
-        Arrays.sort(numbers);
-        System.out.println("Массив после сортировки: ");
-        showArray(numbers);
+        int[] numbers = getNumbers(n, sc);
+        // Сортировать по возрастанию
+        Array.sort(numbers);
+        System.out.println("Массив после сортировки по возрастанию: ");
+        Array.showArray1(numbers);
+        // Сортировать по  расположению
+        Arrays2.sortDESC(numbers);
+        System.out.println("Массив после сортировки по  расположению: ");
+        Arrays2.showArray2(numbers);
     }
 
-    /**
-     * способ отображения элементов массива
-     *
-     * @param numbers - это массив, содержащий элементы для отображения
-     */
-    private static void showArray(int[] numbers) {
-        for (int i = 0; i < numbers.length; i++) {
-            System.out.print(numbers[i] + " ");
-        }
-        System.out.println();
-    }
-
-    /**
-     * способ ввода списка целых чисел
-     *
-     * @param n  - количество вводимых значений
-     * @param sc - объект класса Scanner
-     * @return массив введенных элементов
-     */
     private static int[] getNumbers(int n, Scanner sc) {
         var numbers = new int[n];
         for (int i = 0; i < n; i++) {
